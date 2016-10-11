@@ -1,0 +1,222 @@
+root {
+    font-size: 12px;
+}
+
+@media screen and (min-width: 385px) {
+    root {
+        font-size: 14px;
+    }
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    background: #555;
+    height: 70px;
+    width: 100%;
+    text-align: center;
+}
+
+header a {
+    color: whitesmoke;
+    text-decoration: none;
+    display: block;
+}
+
+header a:hover {
+    color: darkgrey;
+}
+
+.active {
+    color: darkgrey;
+}
+
+#logo, nav {
+    height: 50%;
+    width: 100%;
+}
+
+#logo a {
+    font-size: 1.5rem;
+    margin: 2px 0;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+nav li {
+    display: inline-block;
+    list-style: none;
+    height: 100%;
+}
+
+nav a {
+    font-size: 1.2rem;
+    padding: 0 5px;
+    margin: 5px 10px;
+}
+
+#container {
+    margin: 90px 40px 30px 40px;
+}
+
+footer {
+    background-color: #555;
+    color: whitesmoke;
+    height: 25px;
+}
+
+footer div {
+    padding: 4px 0 4px 40px;
+}
+
+footer h5 {
+    margin: 0;
+}
+
+#contact h2 {
+    margin-bottom: 10px;
+}
+
+#contact h4 {
+    margin: 0 0 15px 0;
+}
+
+#contact input, #contact textarea {
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 98%;
+    border: 2px solid #555555;
+    border-radius: 4px;
+    padding: 2px 0;
+    margin-bottom: 8px;
+}
+
+#contact textarea {
+    padding: 0;
+    resize: none;
+}
+
+#contact button {
+    background: slateblue;
+    color: whitesmoke;
+    border: none;
+    border-radius: 8px;
+    height: 30px;
+    width: 50px;
+}
+
+#contact button:hover {
+    background: darkblue;
+}
+
+#resume .heading {
+    color: darkred;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#resume .text {
+    margin: 10px 0;
+}
+
+#resume #skills {
+    padding: 0;
+    margin: 0;
+}
+
+#resume #skills li {
+    display: inline-block;
+    width: 30%;
+    margin-right: 8px;
+}
+
+@media screen and (min-width: 385px) {
+    #logo a {
+        font-size: 1.7rem;
+        margin: 1px 0;
+    }
+
+    nav a {
+        font-size: 1.4rem;
+        margin: 3px 16px;
+    }
+
+    #resume #skills li {
+        margin-right: 10px;
+    }
+}
+
+@media screen and (min-width: 468px) {
+    #logo a {
+        font-size: 1.8rem;
+        margin: 0;
+    }
+
+    nav a {
+        font-size: 1.5em;
+        margin: 2px 24px;
+    }
+
+    #resume #skills li {
+        margin-right: 12px;
+    }
+}
+
+@media screen and (min-width: 618px) {
+    nav a {
+        font-size: 1.6em;
+        margin: 1px 46px 3px 46px;
+    }
+
+    #resume #skills li {
+        width: 20%;
+        margin-right: 16px;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #logo, nav {
+        height: 100%;
+        display: inline-block;
+    }
+
+    #logo {
+        width: 35%;
+        text-align: left;
+    }
+
+    nav {
+        width: 55%;
+        margin: 0 0 0 10%;
+    }
+
+    #logo a {
+        font-size: 1.8rem;
+        display: block;
+        height: 36px;
+        margin: 17px 0 17px 60px;
+    }
+
+
+    nav a {
+        font-size: 1.1em;
+        margin: 2px 6px;
+        padding: 2px 10px;
+    }
+
+    #container {
+        margin: 90px 60px 30px 60px;
+    }
+
+    footer div {
+        padding: 4px 0 4px 60px;
+    }
+}
