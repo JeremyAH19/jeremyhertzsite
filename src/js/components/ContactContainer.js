@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 import Contact from '../pages/Contact';
 
@@ -33,32 +34,30 @@ class ContactContainer extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
         this.setState({
            isValid: false
         });
 
-/*        emailjs.init("user_VLNfBRixdyOvPpzV0lRzC");
-        emailjs.send("gmail", "jeremyhertztemplate", {
-            from_name: this.state.name,
-            from_email: this.state.email,
-            message
+        axios.defaults.timeout = 5000;
+        axios.post('/api/send', {
+            name: this.state.name,
+            email: this.state.email,
+            message: this.state.message
         }).then(function(response) {
-            console.log("Email successfully Sent!", response);
-            window.alert("Email successfully Sent!");
+            console.log(response);
+            window.alert('Email successfully sent!');
             this.setState({
                 name: "",
                 email: "",
                 message: ""
-            });
-        }).catch(function(error) {
-            console.log("There was an error sending the email.", error);
-            window.alert("There was an error sending the email.  Please try again.");
+            })
+        }.bind(this)).catch(function(error) {
+            console.log(error);
+            window.alert('Email failed to send.  Please try again.');
             this.setState({
                 isValid: true
-            });
-        })*/
-
+            })
+        }.bind(this))
     }
 
     render() {
