@@ -10,7 +10,10 @@
   "author": "Jeremy Hertz",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.15.0",
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "mailgun-js": "^0.7.12",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-router": "^2.8.1",
