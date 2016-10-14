@@ -2,6 +2,10 @@ root {
     font-size: 12px;
 }
 
+html {
+    box-sizing: border-box;
+}
+
 @media screen and (min-width: 385px) {
     root {
         font-size: 14px;
@@ -20,12 +24,15 @@ header {
     height: 70px;
     width: 100%;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
 }
 
 header a {
     color: whitesmoke;
     text-decoration: none;
-    display: block;
+    padding: 4px;
 }
 
 header a:hover {
@@ -36,32 +43,27 @@ header a:hover {
     color: darkgrey;
 }
 
-#logo, nav {
-    height: 50%;
-    width: 100%;
+#logo, nav{
+    flex: 1 1 100%;
 }
 
 #logo a {
     font-size: 1.5rem;
-    margin: 2px 0;
 }
 
 nav ul {
-    margin: 0;
     padding: 0;
-    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav li {
-    display: inline-block;
     list-style: none;
-    height: 100%;
 }
 
 nav a {
-    font-size: 1.2rem;
-    padding: 0 5px;
-    margin: 5px 10px;
+    font-size: 1.3rem;
 }
 
 #container {
@@ -75,28 +77,33 @@ footer {
 }
 
 footer div {
-    padding: 4px 0 4px 40px;
+    padding-left: 40px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 footer h5 {
     margin: 0;
 }
 
-#contact h2 {
-    margin-bottom: 10px;
+#contact h3 {
+    margin: 0 0 10px 0;
 }
 
-#contact h4 {
-    margin: 0 0 15px 0;
+#contact div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
 }
 
 #contact input, #contact textarea {
     font-family: 'Source Sans Pro', sans-serif;
-    width: 98%;
     border: 2px solid #555555;
     border-radius: 4px;
-    padding: 2px 0;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+    max-width: 300px;
+    flex: 1 1 74%;
 }
 
 #contact textarea {
@@ -104,13 +111,32 @@ footer h5 {
     resize: none;
 }
 
+#contact input.valid, #contact textarea.valid {
+    border: 2px solid #21A321;
+}
+
+#contact input.invalid, #contact textarea.invalid {
+    border: 2px solid #de0000;
+}
+
+#contact span {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    padding-left: 10px;
+    flex: 1 1 20%;
+}
+
+#contact img {
+    height: 18px;
+}
+
 #contact button {
     background: slateblue;
     color: whitesmoke;
     border: none;
-    border-radius: 8px;
-    height: 30px;
-    width: 50px;
+    border-radius: 4px;
+    padding: 4px;
 }
 
 #contact button:hover {
@@ -141,75 +167,66 @@ footer h5 {
 @media screen and (min-width: 385px) {
     #logo a {
         font-size: 1.7rem;
-        margin: 1px 0;
     }
 
     nav a {
         font-size: 1.4rem;
-        margin: 3px 16px;
-    }
-
-    #resume #skills li {
-        margin-right: 10px;
     }
 }
 
 @media screen and (min-width: 468px) {
     #logo a {
         font-size: 1.8rem;
-        margin: 0;
     }
 
     nav a {
         font-size: 1.5em;
-        margin: 2px 24px;
-    }
-
-    #resume #skills li {
-        margin-right: 12px;
     }
 }
 
 @media screen and (min-width: 618px) {
     nav a {
         font-size: 1.6em;
-        margin: 1px 46px 3px 46px;
     }
 
     #resume #skills li {
         width: 20%;
-        margin-right: 16px;
     }
 }
 
 @media screen and (min-width: 768px) {
+    header {
+        text-align: left;
+        flex-wrap: nowrap;
+    }
+
     #logo, nav {
         height: 100%;
-        display: inline-block;
     }
 
     #logo {
-        width: 35%;
-        text-align: left;
-    }
-
-    nav {
-        width: 55%;
-        margin: 0 0 0 10%;
+        display: flex;
+        flex: 1 1 60%;
+        align-items: center;
+        padding-left: 60px;
     }
 
     #logo a {
         font-size: 1.8rem;
-        display: block;
-        height: 36px;
-        margin: 17px 0 17px 60px;
+        padding-left: 0;
     }
 
+    nav {
+        flex: 1 1 40%;
+    }
+
+    nav ul {
+        height: 100%;
+        align-items: center;
+    }
 
     nav a {
         font-size: 1.1em;
-        margin: 2px 6px;
-        padding: 2px 10px;
     }
 
     #container {
@@ -217,6 +234,6 @@ footer h5 {
     }
 
     footer div {
-        padding: 4px 0 4px 60px;
+        padding-left: 60px;
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import validator from 'validator';
 
 import Contact from '../pages/Contact';
 
@@ -10,33 +11,25 @@ class ContactContainer extends React.Component {
             name: "",
             email: "",
             message: "",
-            isValid: true
+            nameValidity: "PRISTINE",
+            emailValidity: "PRISTINE",
+            messageValidity: "PRISTINE"
         }
     }
 
-    handleNameChange(e) {
+    handleInputChange(e) {
+        const inputName = e.target.name;
+        const inputValue = e.target.value;
+        console.log(inputName, ": ", inputValue);
+        console.log(inputName + "Validity", ": ", handleInputValidity(inputName, inputValue));
         this.setState({
-            name: e.target.value
-        })
-    }
-
-    handleEmailChange(e) {
-        this.setState({
-            email: e.target.value
-        })
-    }
-
-    handleMessageChange(e) {
-        this.setState({
-            message: e.target.value
+            [inputName]: inputValue,
+            [inputName + "Validity"]: handleInputValidity(inputName, inputValue)
         })
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.setState({
-           isValid: false
-        });
 
         axios.defaults.timeout = 5000;
         axios.post('/api/send', {
@@ -49,14 +42,14 @@ class ContactContainer extends React.Component {
             this.setState({
                 name: "",
                 email: "",
-                message: ""
+                message: "",
+                nameValidity: "PRISTINE",
+                emailValidity: "PRISTINE",
+                messageValidity: "PRISTINE"
             })
         }.bind(this)).catch(function(error) {
             console.log(error);
             window.alert('Email failed to send.  Please try again.');
-            this.setState({
-                isValid: true
-            })
         }.bind(this))
     }
 
@@ -66,12 +59,37 @@ class ContactContainer extends React.Component {
                 name={this.state.name}
                 email={this.state.email}
                 message={this.state.message}
-                onNameChange={this.handleNameChange.bind(this)}
-                onEmailChange={this.handleEmailChange.bind(this)}
-                onMessageChange={this.handleMessageChange.bind(this)}
-                onSubmit={this.handleSubmit.bind(this)}
-                isValid={this.state.isValid}/>
+                nameValidity={this.state.nameValidity}
+                emailValidity={this.state.emailValidity}
+                messageValidity={this.state.messageValidity}
+                onInputChange={this.handleInputChange.bind(this)}
+                onSubmit={this.handleSubmit.bind(this)}/>
         );
+    }
+}
+
+function handleInputValidity(input, value) {
+    switch(input) {
+        case "name": {
+            if(!validator.matches(value, /[A-Za-z ]/))
+                return "Name must only contain letters and spaces.";
+            if(!validator.isLength(value, {min: 2}))
+                return "Name must contain at least 2 letters.";
+            else
+                return "";
+        }
+        case "email": {
+            if(!validator.isEmail(value))
+                return "Email must be a valid email address.";
+            else
+                return "";
+        }
+        case "message": {
+            if(!validator.isLength(value, {min: 10}))
+                return "Message must contain at least 10 characters.";
+            else
+                return "";
+        }
     }
 }
 
