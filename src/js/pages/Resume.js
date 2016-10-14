@@ -11,7 +11,7 @@ function Resume(props) {
                 teamwork. Seeking a challenging and rewarding opportunity to create, innovate and problem solve.
             </p>
             <p className="heading">Technical Skills</p>
-            <ul id="skills">
+            <ul className="skills text">
                 <li>Java</li>
                 <li>JavaScript</li>
                 <li>ReactJS</li>
@@ -24,7 +24,58 @@ function Resume(props) {
                 <li>Eclipse</li>
                 <li>WebStorm</li>
                 <li>Git</li>
+                <li className="hidden"/>
+                <li className="hidden"/>
+                <li className="hidden"/>
             </ul>
+            <p className="heading">Work History</p>
+            <div className="company">
+                <span>Happy Cloud, Inc., <em>New York, NY</em></span>
+                <span className="jobtitle">Game Porting Engineer</span>
+                <span>Sep. 2014 – Feb. 2016</span>
+            </div>
+            <p className="text">
+                Happy Cloud, Inc., a unique and innovative game technology startup that pioneered
+                cloud-based progressive download technology for PC and Mobile gaming.
+            </p>
+            <ul className="workpoints">
+                <li>
+                    • Applied advanced download technology to games for both PC and mobile platforms,
+                    reducing download time by as much as 90% for gamers
+                </li>
+                <li>
+                    • Utilized Happy Cloud client to analyze gameplay and understand how data is requested
+                </li>
+                <li>
+                    • Studied analysis of data requests and created specific JSON-formatted files to determine
+                    the optimal download priority of game assets
+                </li>
+                <li>
+                    • Designed Happy Cloud game launchers using HTML, CSS, and JavaScript
+                </li>
+                <li>
+                    • Directly communicated with game players in order to repair bugs and other technological issues
+                    that came up during gameplay, and used SQL to organize bug reports
+                </li>
+                <li>
+                    • Brainstormed, created and tested other innovative Happy Cloud technologies and determined how to
+                    best utilize such tools on behalf of the client
+                </li>
+                <li>
+                    • Created programs in Java and C# to parse through contents of packaged game data, allowing for a
+                    faster and more accurate analysis of data requested and a higher level of efficiency
+                    amongst team members
+                </li>
+            </ul>
+            <p className="heading">Relevant Links</p>
+            <p className="text">
+                Github Profile: <a href="https://github.com/JeremyAH19">https://github.com/JeremyAH19</a>
+            </p>
+            <p className="heading">Education</p>
+            <div className="education">
+                <span>Rochester Institute of Technology, <em>Rochester, NY</em></span>
+                <span>B.S. Electrical Engineering Technology (2011)</span>
+            </div>
         </div>
     );
 }

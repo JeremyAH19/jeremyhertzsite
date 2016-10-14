@@ -145,23 +145,56 @@ footer h5 {
 
 #resume .heading {
     color: darkred;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     font-weight: bold;
 }
 
 #resume .text {
-    margin: 10px 0;
+    margin: 6px 0;
 }
 
-#resume #skills {
+#resume .skills {
+    display: flex;
+    flex-wrap: wrap;
     padding: 0;
-    margin: 0;
 }
 
-#resume #skills li {
-    display: inline-block;
-    width: 30%;
-    margin-right: 8px;
+#resume .skills li {
+    list-style: none;
+    flex: 1 1 30%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.company{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+
+.company span {
+    flex: 1 1 100%;
+}
+
+.workpoints {
+    margin: 0;
+    padding: 0;
+}
+
+.workpoints li {
+    list-style: none;
+}
+
+.education {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.education span {
+    flex: 1 1 100%;
 }
 
 @media screen and (min-width: 385px) {
@@ -189,8 +222,16 @@ footer h5 {
         font-size: 1.6em;
     }
 
-    #resume #skills li {
-        width: 20%;
+    #resume .skills li {
+        flex: 15 15 20%;
+    }
+
+    .company span {
+        max-width: 40%;
+    }
+
+    .company .jobtitle {
+        order: 1;
     }
 }
 
