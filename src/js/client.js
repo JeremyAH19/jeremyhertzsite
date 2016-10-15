@@ -5,7 +5,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Layout from "./pages/Layout";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
-import Resume from "./pages/Resume";
+import ResumeContainer from "./components/ResumeContainer";
 import ContactContainer from "./components/ContactContainer";
 import NotFound from "./pages/NotFound";
 
@@ -16,7 +16,7 @@ ReactDOM.render(
         <Route path="/" component={Layout}>
             <IndexRoute component={About}/>
             <Route path="projects" name="projects" component={Projects}/>
-            <Route path="resume" name="resume" component={Resume}/>
+            <Route path="resume" name="resume" component={ResumeContainer}/>
             <Route path="contact" name="contact" component={ContactContainer}/>
             <Route path="*" component={NotFound}/>
         </Route>

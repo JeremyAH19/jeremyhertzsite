@@ -1,13 +1,5 @@
 import React from "react";
 
-function onDownloadClick(e) {
-    const url = e.target.name === 'docx' ?
-        './documents/jeremyhertzresume.docx' :
-        './documents/jeremyhertzresume.pdf';
-
-    window.location.assign(url);
-}
-
 function Resume(props) {
     return(
         <div id="resume">
@@ -86,11 +78,15 @@ function Resume(props) {
             </div>
             <div className="download">
                 <span>Download: </span>
-                <button type="button" name="docx" onClick={onDownloadClick}>WORD</button>
-                <button type="button" name="pdf" onClick={onDownloadClick}>PDF</button>
+                <button type="button" name="docx" onClick={props.onDownloadClick}>WORD</button>
+                <button type="button" name="pdf" onClick={props.onDownloadClick}>PDF</button>
             </div>
         </div>
     );
 }
+
+Resume.propTypes = {
+    onDownloadClick: React.PropTypes.func.isRequired
+};
 
 export default Resume;
