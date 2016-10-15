@@ -1,5 +1,13 @@
 import React from "react";
 
+function onDownloadClick(e) {
+    const url = e.target.name === 'docx' ?
+        './documents/jeremyhertzresume.docx' :
+        './documents/jeremyhertzresume.pdf';
+
+    window.location.assign(url);
+}
+
 function Resume(props) {
     return(
         <div id="resume">
@@ -72,9 +80,14 @@ function Resume(props) {
                 Github Profile: <a href="https://github.com/JeremyAH19">https://github.com/JeremyAH19</a>
             </p>
             <p className="heading">Education</p>
-            <div className="education">
+            <div className="education text">
                 <span>Rochester Institute of Technology, <em>Rochester, NY</em></span>
                 <span>B.S. Electrical Engineering Technology (2011)</span>
+            </div>
+            <div className="download">
+                <span>Download: </span>
+                <button type="button" name="docx" onClick={onDownloadClick}>WORD</button>
+                <button type="button" name="pdf" onClick={onDownloadClick}>PDF</button>
             </div>
         </div>
     );

@@ -87,6 +87,10 @@ footer h5 {
     margin: 0;
 }
 
+div h3 {
+    color: darkred;
+}
+
 #contact h3 {
     margin: 0 0 10px 0;
 }
@@ -131,15 +135,16 @@ footer h5 {
     height: 18px;
 }
 
-#contact button {
+button {
     background: slateblue;
     color: whitesmoke;
     border: none;
     border-radius: 4px;
     padding: 4px;
+    margin-right: 4px;
 }
 
-#contact button:hover {
+button:hover {
     background: darkblue;
 }
 
@@ -195,6 +200,15 @@ footer h5 {
 
 .education span {
     flex: 1 1 100%;
+}
+
+.download {
+    margin-top: 20px;
+}
+
+.download button {
+    padding: 6px;
+    margin: 0 6px;
 }
 
 @media screen and (min-width: 385px) {
