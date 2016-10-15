@@ -211,6 +211,16 @@ button:hover {
     margin: 0 6px;
 }
 
+.underconstruction {
+    display: flex;
+    justify-content: center;
+    max-width: 250px;
+}
+
+.underconstruction img {
+    max-width: 230px;
+}
+
 @media screen and (min-width: 385px) {
     #logo a {
         font-size: 1.7rem;
