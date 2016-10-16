@@ -56,7 +56,7 @@ function Contact(props) {
                     <span><ValidImage validity={props.messageValidity}/></span>
                 </div>
                 <div>
-                    <button type="submit">Send</button>
+                    <button type="submit" disabled>Send</button>
                 </div>
             </form>
         </div>
