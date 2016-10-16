@@ -16,7 +16,7 @@ class ResumeContainer extends React.Component {
                 this.docxUrl = urls[0].data;
                 this.pdfUrl = urls[1].data
             }.bind(this)).catch(function(error) {
-                console.log(error)
+                console.error(error)
         })
     }
 

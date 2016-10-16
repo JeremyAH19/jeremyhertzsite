@@ -20,8 +20,7 @@ class ContactContainer extends React.Component {
     handleInputChange(e) {
         const inputName = e.target.name;
         const inputValue = e.target.value;
-        console.log(inputName, ": ", inputValue);
-        console.log(inputName + "Validity", ": ", handleInputValidity(inputName, inputValue));
+
         this.setState({
             [inputName]: inputValue,
             [inputName + "Validity"]: handleInputValidity(inputName, inputValue)
@@ -48,7 +47,7 @@ class ContactContainer extends React.Component {
                 messageValidity: "PRISTINE"
             })
         }.bind(this)).catch(function(error) {
-            console.log(error);
+            console.error(error);
             window.alert('Email failed to send.  Please try again.');
         }.bind(this))
     }
