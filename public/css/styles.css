@@ -20,19 +20,27 @@ body {
 header {
     position: fixed;
     top: 0;
-    background: #555;
+    background: rgba(85, 85, 85, 0.5);
     height: 70px;
     width: 100%;
     text-align: center;
+}
+header div {
+    height: 100%;
+    margin-left: 20px;
     display: flex;
-    flex-wrap: wrap;
-    align-content: space-around;
 }
 
-header a {
+header button {
+    background: rgba(255, 255, 255, 0);
+    padding: 2px;
+    margin: 10px 0;
     color: whitesmoke;
-    text-decoration: none;
-    padding: 4px;
+    border: none;
+}
+
+.material-icons.md-48 {
+    font-size: 48px;
 }
 
 header a:hover {
@@ -43,31 +51,42 @@ header a:hover {
     color: darkgrey;
 }
 
-#logo, nav{
-    flex: 1 1 100%;
+nav {
+    position: absolute;
+    background-color: rgba(85, 85, 85, 0.85);
+    border-radius: 4px;
+    width: 180px;
+    height: 250px;
 }
 
-#logo a {
-    font-size: 1.5rem;
+.nav-hidden {
+    visibility: hidden;
 }
 
 nav ul {
+    height: 100%;
     padding: 0;
-    margin: 0;
+    margin: 0 0 0 10px;
+    text-align: left;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 nav li {
     list-style: none;
+    flex: 1 1 100%;
 }
 
 nav a {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 8px;
 }
 
 #container {
-    margin: 90px 40px 30px 40px;
+    margin-bottom: 30px;
 }
 
 footer {
@@ -87,15 +106,48 @@ footer h5 {
     margin: 0;
 }
 
+.section-title {
+    position: static;
+    height: 70px;
+    background: lightsteelblue;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.section-content {
+    margin: 0 40px;
+}
+
 div h3 {
-    color: darkred;
+    color: white;
+    margin: auto 6% auto 0;
+    font-size: 1.7em;
+    opacity: 0.75;
 }
 
-#contact h3 {
-    margin: 0 0 10px 0;
+#home {
+    background: whitesmoke url("../images/DUMBO1.jpg") no-repeat fixed center;
+    background-size: cover;
+    height: 750px;
 }
 
-#contact div {
+#home div {
+    padding-left: 100px;
+    background: lightsteelblue;
+}
+
+#home h1 {
+    margin: auto 6% auto 0;
+    color: whitesmoke;
+    opacity: 0.75;
+}
+
+#contact form {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#contact .input-section {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -103,15 +155,16 @@ div h3 {
 
 #contact input, #contact textarea {
     font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
     border: 2px solid #555555;
     border-radius: 4px;
     margin-bottom: 4px;
+    padding: 2px;
     max-width: 300px;
-    flex: 1 1 74%;
+    width: 70%
 }
 
 #contact textarea {
-    padding: 0;
     resize: none;
 }
 
@@ -128,24 +181,28 @@ div h3 {
     align-items: center;
     margin-bottom: 4px;
     padding-left: 10px;
-    flex: 1 1 20%;
+    width: 20%;
 }
 
 #contact img {
     height: 18px;
 }
 
-button {
+#contact button, #resume button {
     background: slateblue;
     color: whitesmoke;
     border: none;
     border-radius: 4px;
-    padding: 4px;
+    padding: 8px;
     margin-right: 4px;
 }
 
-button:hover {
+#contact button:hover, #resume button:hover {
     background: darkblue;
+}
+
+#resume {
+    margin-bottom: 20px;
 }
 
 #resume .heading {
@@ -265,22 +322,6 @@ button:hover {
         flex-wrap: nowrap;
     }
 
-    #logo, nav {
-        height: 100%;
-    }
-
-    #logo {
-        display: flex;
-        flex: 1 1 60%;
-        align-items: center;
-        padding-left: 60px;
-    }
-
-    #logo a {
-        font-size: 1.8rem;
-        padding-left: 0;
-    }
-
     nav {
         flex: 1 1 40%;
     }
@@ -290,15 +331,11 @@ button:hover {
         align-items: center;
     }
 
-    nav a {
-        font-size: 1.1em;
-    }
-
-    #container {
-        margin: 90px 60px 30px 60px;
-    }
-
     footer div {
         padding-left: 60px;
+    }
+
+    .section-content {
+        margin: 0 60px;
     }
 }

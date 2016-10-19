@@ -1,14 +1,25 @@
 import React from "react";
 
-import Navbar from "../components/layout/NavBar";
+import NavbarContainer from "../components/NavbarContainer";
+
+import Home from '../pages/Home';
+import About from '../pages/About';
+import Projects from '../pages/Projects';
+import ResumeContainer from '../components/ResumeContainer';
+import ContactContainer from '../components/ContactContainer';
+
 import Footer from "../components/layout/Footer";
 
 function Layout(props) {
     return(
         <div>
-            <Navbar location={props.location}/>
+            <NavbarContainer/>
             <div id="container">
-                {props.children}
+                <Home/>
+                <About/>
+                <Projects/>
+                <ResumeContainer/>
+                <ContactContainer/>
             </div>
             <Footer/>
         </div>

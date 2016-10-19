@@ -1,25 +1,31 @@
 import React from "react";
-import { Link, IndexLink } from "react-router";
 
 function Navbar(props) {
-    const projectsActive = props.location.pathname.match(/^\/projects/) ? "active" : "";
-    const resumeActive = props.location.pathname.match(/^\/resume/) ? "active" : "";
-    const contactActive = props.location.pathname.match(/^\/contact/) ? "active" : "";
+    const hiddenClass = props.isHidden ? "nav-hidden" : "";
 
     return(
         <header>
-            <div id="logo">
-                <IndexLink to="/">JeremyHertz.com</IndexLink>
+            <div>
+                <button onClick={props.onHiddenToggle}>
+                    <i className="material-icons md-48">menu</i>
+                </button>
             </div>
-            <nav>
+            <nav className={hiddenClass}>
                 <ul>
-                    <li><Link to="/projects" className={projectsActive}>Projects</Link></li>
-                    <li><Link to="/resume" className={resumeActive}>Resume</Link></li>
-                    <li><Link to="/contact" className={contactActive}>Contact Me</Link></li>
+                    <li><a onClick={props.onHiddenToggle} href="#home">Home</a></li>
+                    <li><a onClick={props.onHiddenToggle} href="#about">About</a></li>
+                    <li><a onClick={props.onHiddenToggle} href="#projects">Projects</a></li>
+                    <li><a onClick={props.onHiddenToggle} href="#resume">Resume</a></li>
+                    <li><a onClick={props.onHiddenToggle} href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
     );
 }
+
+Navbar.propTypes = {
+    isHidden: React.PropTypes.bool.isRequired,
+    onHiddenToggle: React.PropTypes.func.isRequired
+};
 
 export default Navbar;
